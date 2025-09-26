@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="main">
+    <nav>
+      <span><img width="50px" src="images/netflix-3.svg" alt="Netflix Logo" /></span>
+      <div>
+        <button><b>Sign In</b></button>
+      </div>
+    </nav>
+    <div class="box"></div>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Unlimited movies, TV</h1>
+        <h1>shows, and more</h1>
+        <h3><b>Starts at Rs 250. Cancel anytime.</b></h3>
+        <p>
+          Ready to watch? Enter your email to create or restart your
+          membership.
+        </p>
+      </div>
+      <div class="hero-form">
+        <form class="email-form">
+          <input type="email" placeholder="Email address" />
+          <button type="submit">Get Started ></button>
+        </form>
+      </div>
+    </div>
+    <div class="curve">
+      <div class="curve-in">
+        <div class="curve-out"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trending Now Section -->
+  <div class="top10-section">
+    <h2><b>Trending Now</b></h2>
+
+    <!-- Hidden radio buttons -->
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+
+    <div class="slider">
+      <!-- Left arrow -->
+      <label for="slide1" class="arrow left">&#10094;</label>
+      <!-- Right arrow -->
+      <label for="slide2" class="arrow right">&#10095;</label>
+
+      <div class="top10-items">
+        <div class="top10-item"><span class="rank">1</span><img src="images/Movie1.webp" /></div>
+        <div class="top10-item"><span class="rank">2</span><img src="images/Movie2.webp" /></div>
+        <div class="top10-item"><span class="rank">3</span><img src="images/Movie3.webp" /></div>
+        <div class="top10-item"><span class="rank">4</span><img src="images/Movie4.webp" /></div>
+        <div class="top10-item"><span class="rank">5</span><img src="images/Movie5.webp" /></div>
+        <div class="top10-item"><span class="rank">6</span><img src="images/Movie6.webp" /></div>
+        <div class="top10-item"><span class="rank">7</span><img src="images/Movie7.webp" /></div>
+        <div class="top10-item"><span class="rank">8</span><img src="images/Movie8.webp" /></div>
+        <div class="top10-item"><span class="rank">9</span><img src="images/Movie9.webp" /></div>
+        <div class="top10-item"><span class="rank">10</span><img src="images/Movie10.webp" /></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other sections (Reasons, FAQ, Footer, etc.) stay same -->
+  <div class="reasons">
+    <h2><b>More Reasons to Join</b></h2>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <h2><b>Enjoy on your TV</b></h2>
+        <span>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
+          Blu-ray players, and more.</span>
+        <img src="images/monitor.png" alt="TV Monitor" class="card-icon" />
+      </div>
+      <div class="reason-card">
+        <h2><b>Download your shows</b></h2>
+        <span>Save your favorites easily and always have something to
+          watch.</span>
+        <img src="images/arrow.png" alt="arrow" class="card-icon" />
+      </div>
+      <div class="reason-card">
+        <h2><b>Watch everywhere</b></h2>
+        <span>Stream unlimited movies and TV shows on your phone, tablet, laptop,
+          and TV.</span>
+        <img src="images/tele.png" alt="tele" class="card-icon" />
+      </div>
+      <div class="reason-card">
+        <h2><b>Create profiles for kids</b></h2>
+        <span>Send kids on adventures with their favorite characters in a space
+          made just for them.</span>
+        <img src="images/faces.png" alt="Kids Profile" class="card-icon" />
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <h2><b>Frequently Asked Questions</b></h2>
+    <details class="faq-box">
+      <summary>What is Netflix?</summary>
+      <p>
+        Netflix is a streaming service that offers a wide variety of
+        award-winning TV shows, movies, anime, documentaries, and more on
+        thousands of internet-connected devices.
+      </p>
+    </details>
+    <!-- ... rest of FAQ ... -->
+  </div>
+
+  <div class="bottom">
+    <div class="bottom-page">
+      <p>
+        Ready to watch? Enter your email to create or restart your membership.
+      </p>
+    </div>
+    <div class="hero-form2">
+      <form class="email-form2">
+        <input type="email" placeholder="Email address" />
+        <button type="submit">Get Started ></button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-contact">Questions? Contact us.</p>
+    <!-- ... footer links ... -->
+  </footer>
+</body>
+</html>

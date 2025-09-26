@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: black;
+}
+
+.main {
+    background-image: url(images/netflix_bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: max(1200px, 100vw);
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.curve {
+    background-color: black;
+    overflow: hidden;
+    position: absolute;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 60%;
+}
+
+.curve-in {
+    height: 10vh;
+    width: 100vw;
+    background: linear-gradient(to right, rgb(255, 0, 204), red, rgb(255, 0, 204));
+    position: relative;
+    top: 90%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.curve-out {
+    height: 90%;
+    width: 100%;
+    background: radial-gradient(ellipse at 50% 0, blue, black 50%);
+    position: absolute;
+    top: 10%;
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+}
+
+.main .box {
+    height: 100vh;
+    width: 100%;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    background-color: black;
+}
+nav {
+    max-width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+nav img {
+    height: 40px;
+    width: auto;
+    z-index: 10;
+    position: relative;
+}
+
+nav button {
+    background-color: rgb(215, 8, 8);
+    border-radius: 5px;
+    padding: 8px 16px;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 10;
+    position: relative;
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 70px;
+    margin: 0;
+}
+
+.hero-text h1:first-of-type {
+    margin-bottom: 5px;
+}
+
+.hero-text h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    margin: 15px 0 20px 0;
+    padding: 2%;
+}
+
+.hero-text p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 8px 0;
+}
+
+.hero-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 0;
+}
+
+.email-form {
+    display: flex;
+    gap: 10px;
+    width: 75%;
+}
+
+.email-form input {
+    flex: 1;
+    font-family: "Open Sans", sans-serif;
+    background-color: transparent;
+    border-radius: 5px;
+    border: solid grey;
+    padding: 8px 10px;
+    color: white;
+    outline: none;
+}
+
+.email-form button {
+    background-color: #e50914;
+    border-radius: 5px;
+    padding: 18px 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.top10-section {
+    width: 100%;
+    min-height: 400px;
+    background-color: black;
+    padding: 60px 0 0 10%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.top10-section h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: whitesmoke;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.top10-items {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 10px;
+    margin-right: 30%;
+}
+
+.top10-item {
+    position: relative;
+    flex: 0 0 auto;
+    width: 180px;
+}
+
+.top10-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Hide radios */
+input[name="slider"] {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.top10-items {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  width: max-content;
+}
+
+.top10-item {
+  flex: 0 0 auto;
+  width: 180px;
+  margin-right: 20px;
+}
+
+/* Slide 1 → default */
+#slide1:checked ~ .slider .top10-items {
+  transform: translateX(0);
+}
+
+/* Slide 2 → shift left */
+#slide2:checked ~ .slider .top10-items {
+  transform: translateX(-60%);
+}
+
+/* Netflix style arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  user-select: none;
+  border: none;
+}
+
+/* Show on hover */
+.slider:hover .arrow {
+  opacity: 1;
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 50px; }
+
+.rank {
+  position: absolute;
+  bottom: 20px;
+  left: -10px;
+  font-size: 85px;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 3px white;
+}
+
+
+.reasons {
+    width: 100%;
+    background-color: black;
+    padding: 30px 10%;
+    box-sizing: border-box;
+}
+
+.reasons h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+.reasons-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.reason-card {
+    position: relative;
+    width: 250px;
+    height: 320px;
+    padding: 20px;
+    border-radius: 16px;
+    background: radial-gradient(circle at 90% 95%, rgba(255, 0, 0, 0.15) 0%, rgba(255, 0, 0, 0.08) 35%, rgba(255, 0, 0, 0.04) 60%, transparent 85%), #0b132b;
+    color: white;
+    overflow: hidden;
+}
+
+.reason-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.reason-card span {
+    font-size: 14px;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.card-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 60px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.faq {
+    background-color: black;
+    padding: 50px 10%;
+    color: white;
+}
+
+.faq h2 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.faq-box {
+    background-color: #2d2d2d;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.faq-box summary {
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
+
+.faq-box summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-size: 24px;
+    transition: transform 0.2s ease;
+}
+
+.faq-box[open] summary::after {
+    content: "×";
+}
+
+.faq-box p {
+    padding: 0 20px 20px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #2d2d2d;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.bottom-page {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 8px 0;
+}
+
+.hero-form2 {
+    display: flex;
+    justify-content: center;
+    width: 1000%;
+    max-width: 800px;
+    margin-top: 0;
+}
+
+.email-form2 {
+    display: flex;
+    gap: 10px;
+    width: 75%;
+}
+
+.email-form2 input {
+    flex: 1;
+    font-family: "Open Sans", sans-serif;
+    background-color: transparent;
+    border-radius: 5px;
+    border: solid grey;
+    padding: 8px 10px;
+    color: white;
+    outline: none;
+}
+
+.email-form2 button {
+    background-color: #e50914;
+    border-radius: 5px;
+    padding: 15px 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footer {
+    background-color: black;
+    color: #999;
+    padding: 40px 10%;
+    font-size: 16px;
+}
+
+.footer p {
+    margin-bottom: 20px;
+}
+
+.footer table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.footer td {
+    padding: 8px 0;
+    width: 25%;
+}
+
+.footer a {
+    color: #999;
+    text-decoration: none;
+}
+
+.footer a {
+    text-decoration: underline;
+}
+
+.footer .lang select {
+    margin-top: 20px;
+}
+
+.footer-lang select {
+    background-color: black;
+    color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
